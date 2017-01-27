@@ -1,0 +1,152 @@
+<html>
+<head>
+<style>
+.jumbotron {
+	background-color: #f4511e;
+	color: #ffffff;
+}
+
+.input-group-addon {
+	min-width: 180px;
+}
+</style>
+</head>
+<body>
+
+	<div class="jumbotron text-center">
+		<h1>KNR Solvents <a class="navbar-brand" href="#" style="color: #fff; padding-left:50px">Home</a></h1>
+	</div>
+
+	<div class="col-md-10 col-md-offset-1">
+		<div class="panel panel-default">
+			<div class="panel-heading">Add Company Details</div>
+			<div class="panel-body">
+				<div class="col-md-6">
+					<div class="input-group">
+						<span class="input-group-addon">Oil Mill Name</span> <input
+							id="oilmillname" type="text" class="form-control"
+							name="oilmillname" placeholder="Enter oilMill Name"
+							ng-model="newOilMillName">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">Owner Name</span> <input
+							id="ownername" type="text" class="form-control" name="ownername"
+							placeholder="Enter Owner Name" ng-model="newOwnerName">
+					</div>
+
+					<br>
+
+					<div class="input-group">
+						<span class="input-group-addon">Registration No:</span> <input
+							id="ownername" type="text" class="form-control" name="ownername"
+							placeholder="Enter Owner Name" ng-model="newRegistrationNumber">
+					</div>
+					<br>
+
+					<div class="input-group">
+						<span class="input-group-addon">Address</span> <input id="address"
+							type="text" class="form-control" name="address"
+							placeholder="Enter Address " ng-model="newAddress">
+				</div>
+				</div>
+				<!-- <div class="col-Xs-2"></div>	 -->
+				<div class="col-md-6">
+
+					<div class="input-group">
+						<span class="input-group-addon">State </span>
+						<select ng-model="newState" class="form-control" ng-options="x for x in states">
+						
+						</select>
+					</div>
+					<br />
+					<div class="input-group">
+						<span class="input-group-addon">City</span> 
+						<select  ng-model="newCity" class ="form-control" >
+						<option ng-repeat="x in cities">{{x}}</option>
+						</select>
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">ZipCode</span> <input id="zipcode"
+							type="text" class="form-control" name="zipcode"
+							placeholder="Enter ZipCode" ng-model="newZipcode">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">ActiveFL </span> 
+						<select class="form-control" ng-model="newActiveFl">
+							<option>Y</option>
+							<option>N</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-6" >
+			<div class="panel panel-default">
+				<div class="panel-heading">Primary Contact</div>
+				<div class="panel-body">
+					<div class="input-group">
+						<span class="input-group-addon">First Name</span> <input
+							id="primarycontact" type="text" class="form-control"
+							name="primarycontact" placeholder="Enter First Name"
+							ng-model="newFirstName">
+					</div>
+					<br/>
+					<div class="input-group">
+						<span class="input-group-addon">Last Name</span> <input
+							id="primarycontact" type="text" class="form-control"
+							name="primarycontact" placeholder="Enter Last Name"
+							ng-model="newLastname">
+					</div>
+					<br/>
+					<div class="input-group">
+						<span class="input-group-addon">Contact No.</span> <input
+							id="primarycontact" type="text" class="form-control"
+							name="primarycontact" placeholder="Enter Contact No"
+							ng-model="newContactNumber">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">Secondary Contact</div>
+				<div class="panel-body">
+					<div class="input-group">
+						<span class="input-group-addon">First Name</span> <input
+							id="primarycontact" type="text" class="form-control"
+							name="primarycontact" placeholder="Enter First Name"
+							ng-model="newFirstName2">
+					</div>
+					<br/>
+					<div class="input-group">
+						<span class="input-group-addon">Last Name</span> <input
+							id="primarycontact" type="text" class="form-control"
+							name="primarycontact" placeholder="Enter Last Name"
+							ng-model="newLastName2">
+					</div>
+					<br/>
+					<div class="input-group">
+						<span class="input-group-addon">Contact No.</span> <input
+							id="secondarycontact" type="text" class="form-control"
+							name="secondarycontact" placeholder="Enter Contact No."
+							ng-model="newContactNumber2">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-10 col-md-offset-1" align="right">
+		<button ng-click="addOilMill();" class="btn btn-danger">Add Oil Mill</button>
+			<button ng-click="resetOilMillDetails();" class="btn btn-danger" >Reset</button>
+	</div>
+	
+
+
+</body>
+
+</html>
