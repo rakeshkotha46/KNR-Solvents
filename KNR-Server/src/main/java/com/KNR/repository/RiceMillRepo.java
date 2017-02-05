@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.KNR.domain.Registration;
 import com.KNR.domain.RiceMill;
 
 @Repository
@@ -24,6 +25,9 @@ public interface RiceMillRepo extends JpaRepository<RiceMill, Integer> {
 	@Transactional
 	@Modifying
 	public void deleteRiceMill(@Param("riceMillId")int riceMillId);
+	
+	@Query("select r from RiceMill r where r.customerId =:registrationId")
+	public List<RiceMill> findRiceMillsByRegId(@Param("registrationId") Registration registrationId);
 	
 	
 }

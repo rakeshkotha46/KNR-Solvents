@@ -52,7 +52,7 @@ angular.module('myApp.view1', [])
 	};
 
 		     $scope.getCompanies = function(){
-		 		$http.get("http://localhost:8080/KNR/getAllRiceMills").success(function(response){
+		 		$http.get("http://localhost:8080/KNR/getAllRiceMills/"+$window.sessionStorage.registrationId).success(function(response){
 		 			return $scope.myData = response;
 		 		}).error(function(error){
 		 			return error;

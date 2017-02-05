@@ -21,6 +21,10 @@ public class RiceMill {
     public String state;
     public String zipCode;
     public String ownerName;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="CUSTOMER_ID")
+    public Registration customerId;
     
     @ManyToOne(cascade= CascadeType.ALL)
 	@JoinColumn(name="PRIMARY_CONTACT")
@@ -32,6 +36,14 @@ public class RiceMill {
     
     public String activeFl;
     
+    
+    
+	public Registration getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(Registration customerId) {
+		this.customerId = customerId;
+	}
 	public int getRiceMillId() {
 		return riceMillId;
 	}

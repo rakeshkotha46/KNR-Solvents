@@ -21,15 +21,17 @@
 			</style>
     </head>
     <body>
-    	<div class="jumbotron text-center">
-    		<h1>Rice Mills List <a class="navbar-brand" href="#" style="color: #fff; padding-left:100px">Home</a></h1>
-       	</div>
-       	
-       	 <input type="text" placeholder="enter rice mill name" ng-model="companyName">
-       	 <input type="button" value="search" ng-click="searchCompany()">
-       	 <br>
-       	 
-       	<br>
+    <div class="jumbotron text-center">
+    		<h1>Rice Mills List <a class="navbar-brand" href="#" style="color: #fff; padding-left:50px">Home</a></h1>
+    	<form class="form-inline" >
+    		<div class="input-group" style="padding-left:100px">
+      			<input type="email" class="form-control" size="50" placeholder="Enter RiceMill Name" ng-model="companyName">
+      				<div class="input-group-btn">
+        				<button type="button" class="btn btn-danger" ng-click="searchCompany()" >Subscribe</button>
+      				</div>
+    		</div>
+       	</form>
+      </div>
         <div class="grid" ui-grid="gridOptions" ui-grid-pagination></div>
         
     </body>

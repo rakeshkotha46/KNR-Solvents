@@ -60,6 +60,7 @@ angular.module('myApp', [
 	  })
 	  
 	  .otherwise({
-		  redirectTo : '/home'
+		  redirectTo : '/login'
   });
+  
 }]);

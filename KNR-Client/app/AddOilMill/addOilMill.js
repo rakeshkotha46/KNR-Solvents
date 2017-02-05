@@ -2,6 +2,7 @@
 
 angular.module('myApp.addOilMill', ['ngRoute'])
 .controller('AddOilMillCtrl', ['$scope','$http',function($scope,$http) {
+	
 	$scope.states = ["TG","AP","DL","TN","KR","GJ","J&K","HR","BR","CH"];
 	 $scope.newState = '';
 	    $scope.$watch('newState',function(){
@@ -13,6 +14,7 @@ angular.module('myApp.addOilMill', ['ngRoute'])
 	        }
 	        
 	        });
+	    
 		$scope.addOilMill = function(){
 			var data=
 					{

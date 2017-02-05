@@ -21,6 +21,7 @@ import com.KNR.repository.contactRepo;
 
 @RestController
 public class TestRestController {
+	
 	@Autowired
 	private RiceMillRepo riceMillRepo;
 	@Autowired
@@ -29,9 +30,10 @@ public class TestRestController {
 	private contactRepo ContactRepo;
 	@Autowired
 	private RegistrationRepo registrationRepo;
-	@RequestMapping(method = RequestMethod.GET, value = "/getAllRiceMills", produces= "application/json")
-	public List<RiceMill> getAllRiceMills() {
-		List<RiceMill> data = riceMillRepo.findAll();
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/getAllRiceMills/{registrationId}", produces= "application/json")
+	public List<RiceMill> getAllRiceMills(@PathVariable int registrationId) {
+		List<RiceMill> data = riceMillRepo.findRiceMillsByRegId(registrationRepo.findOne(registrationId));
 		/*System.out.println(data.get(1).getAddress());*/
 		return data;
 	}
@@ -73,16 +75,15 @@ public class TestRestController {
 	}
 	
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/addCompany", produces= "application/json")
-	public void addCompany(@RequestBody Map<String,String> data) {
+	@RequestMapping(method = RequestMethod.POST, value = "/addCompany/{registrationId}", produces= "application/json")
+	public void addCompany(@RequestBody Map<String,String> data, @PathVariable int registrationId) {
 		
 		Contact contact1 = new Contact();
 		contact1.setContact(data.get("primaryContact"));
 		
 		Contact contact2 = new Contact();
 		contact2.setContact(data.get("secondaryContact"));
-		
-		
+				
 		RiceMill riceMill = new RiceMill();
 		riceMill.setActiveFl(data.get("activeFl"));
 		riceMill.setAddress(data.get("address"));
@@ -94,6 +95,7 @@ public class TestRestController {
 		riceMill.setSecondaryContact(contact2);
 		riceMill.setState(data.get("state"));
 		riceMill.setZipCode(data.get("zipCode"));
+		riceMill.setCustomerId(registrationRepo.findOne(registrationId));
 		riceMillRepo.save(riceMill);
 	}
 	
@@ -130,6 +132,7 @@ public class TestRestController {
 		
 		
 	}
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/getRegistrationDetails/{username}", produces= "application/json")
 	public Registration getRegistrationDetails(@PathVariable String username) {
 		Registration data = registrationRepo.getRegistartion(username);
