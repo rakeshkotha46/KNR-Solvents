@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home_Page</title>
+</head>
+<script>
+	$(document).ready(function() {
+		// Add smooth scrolling to all links in navbar + footer link
+		$(".navbar a, footer a[href='#mypage']").on('click', function(event) {
+
+			// Make sure this.hash has a value before overriding default behavior
+			if (this.hash !== "") {
+
+				// Prevent default anchor click behavior
+				event.preventDefault();
+
+				// Store hash
+				var hash = this.hash;
+
+				// Using jQuery's animate() method to add smooth page scroll
+				// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+				$('html, body').animate({
+					scrollTop : $(hash).offset().top
+				}, 1100, function() {
+
+					// Add hash (#) to URL when done scrolling (default click behavior)
+					window.location.hash = hash;
+				});
+			} // End if
+		});
+	})
+
+	$('#myCarousel').carousel({
+		interval : 4000
+	})
+
+	$('.carousel .item').each(function() {
+		var next = $(this).next();
+		if (!next.length) {
+			next = $(this).siblings(':first');
+		}
+		next.children(':first-child').clone().appendTo($(this));
+
+		for (var i = 0; i < 2; i++) {
+			next = next.next();
+			if (!next.length) {
+				next = $(this).siblings(':first');
+			}
+
+			next.children(':first-child').clone().appendTo($(this));
+		}
+	});
+</script>
+<style>
+.container-fluid {
+	padding: 60px 50px;
+}
+
+.bg-grey {
+	background-color: #f6f6f6;
+}
+
+.navbar {
+	margin-bottom: 0;
+	background-color: #f4511e;
+	z-index: 9999;
+	border: 0;
+	font-size: 12px !important;
+	line-height: 1.42857143 !important;
+	letter-spacing: 4px;
+	border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+	color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+	color: #f4511e !important;
+	background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+	color: #fff !important;
+}
+
+.carousel-inner .active.left {
+	left: -25%;
+}
+
+.carousel-inner .next {
+	left: 25%;
+}
+
+.carousel-inner .prev {
+	left: -25%;
+}
+
+.carousel-control {
+	width: 4%;
+}
+
+.carousel-control.left, .carousel-control.right {
+	margin-left: 15px;
+	background-image: none;
+}
+
+ .carousel-inner .item {
+    -webkit-transition: 1.5s ease-in-out left;
+    transition: 1.5s ease-in-out left;
+    -webkit-transition: 1.5s, ease-in-out, left;
+    -moz-transition: 1.5s, ease-in-out, left;
+    -o-transition: 1.5s, ease-in-out, left;
+    transition: 1.5, ease-in-out, left;
+    }
+</style>
+
+
+
+<body id="mypage">
+	<!-- This is the banner of the page -->
+	<div class="jumbotron text-center">
+		<h1>KNR Solvents</h1>
+		<p>Specialization</p>
+	</div>
+
+	<!-- This is the about us container -->
+
+	<div class="container-fluid" id="about">
+		<img src="commons/Images/about_us.png" width="50px" height="50px">
+		<b>AboutUs</b>
+
+		<p align="justify"></p>
+
+	</div>
+
+	<!-- This is the Portfolio  container -->
+
+	<div class="container-fluid bg-grey" id="portfolio">
+
+		<div class="col-md-12 text-center"></div>
+
+		<div class="carousel slide" id="myCarousel">
+			<div class="carousel-inner">
+				<div class="item active">
+					<div class="col-xs-3">
+						<a href="#"><img class="img-responsive"
+							src="commons/Images/godown.png"></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-3">
+						<a href="#"><img class="img-responsive"
+							src="commons/Images/lorry.jpg"></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-3">
+						<a href="#"><img class="img-responsive"
+							src="commons/Images/paddy.jpg"></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-3">
+						<a href="#"><img class="img-responsive"
+							src="commons/Images/rice_Market.png"></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-3">
+						<a href="#"><img class="img-responsive"
+							src="commons/Images/ricemill.png"></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-3">
+						<a href="#"><img class="img-responsive"
+							src="commons/Images/transport.png"></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-3">
+						<a href="#"><img class="img-responsive"
+							src="commons/Images/godown.png"></a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-xs-3">
+						<a href="#"><img class="img-responsive"
+							src="commons/Images/lorry.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev"><i
+				class="glyphicon glyphicon-chevron-left"></i></a> <a
+				class="right carousel-control" href="#myCarousel" data-slide="next"><i
+				class="glyphicon glyphicon-chevron-right"></i></a>
+		</div>
+	</div>
+
+	<!-- This is services container -->
+
+	<div class="container-fluid" id="services" style="text-align: center;">
+		<h2>Services</h2>
+		<br>
+		<div>
+			<a href="#!/riceMillList" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-th-list"></span> &nbsp &nbsp Listof Rice Mills</a> 
+			<a href="#!/addRiceMill" class="btn btn-danger"role="button"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp &nbspAdd Rice Mill</a> 
+			<a href="#!/addOilMill" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp &nbsp Add Oil Mill</a>
+		</div>
+	</div>
+
+	<!-- This is contact container -->
+
+	<div class="container-fluid bg-grey" id="contact">
+		<h2 class="text-center">CONTACT</h2>
+		<div class="row">
+			<div class="col-sm-5">
+				<p>Contact us and we'll get back to you within 24 hours.</p>
+				<p>
+					<span class="glyphicon glyphicon-map-marker"></span> Telangana,
+					India
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-phone"></span> +91 9866230909
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-envelope"></span>
+					kothanarasimharao@gmail.com
+				</p>
+			</div>
+			<div class="col-sm-7">
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<input class="form-control" id="name" name="name"
+							placeholder="Name" type="text" required>
+					</div>
+					<div class="col-sm-6 form-group">
+						<input class="form-control" id="email" name="email"
+							placeholder="Email" type="email" required>
+					</div>
+				</div>
+				<textarea class="form-control" id="comments" name="comments"
+					placeholder="Comment" rows="5"></textarea>
+				</br>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<button class="btn btn-default pull-right" type="submit">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+
+				<a href=" " class="navbar-brand" ng-click="logout($event)">Log
+					Out</a>
+				<!-- <a class="navbar-brand" ng-click="Logout($event)">Log Out</a> -->
+				<!-- <a class="navbar-brand" href="" ng-click="Login()" ng-hide="authorizedUser"> Log In</a> -->
+
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#about">ABOUT</a></li>
+					<li><a href="#services">SERVICES</a></li>
+					<li><a href="#portfolio">PORTFOLIO</a></li>
+					<li><a href="#pricing">PRICING</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+</body>
+</html>

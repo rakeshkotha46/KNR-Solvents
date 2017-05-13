@@ -11,6 +11,7 @@ angular.module('myApp.Login', ['ngRoute'])
 		 .success(function(response){
 			 if($scope.password==response.password){
 				 $window.sessionStorage.registrationId = response.registrationId;
+				 $window.localStorage.registrationId = response.registrationId;
 				 $window.location.href="/index.html#!/home";
 			 }
 		 })

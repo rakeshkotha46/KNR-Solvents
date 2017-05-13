@@ -9,7 +9,6 @@ angular.module('myApp.view1', [])
 						data : 'myData',
 						columnDefs : [ {
 							field : 'riceMillId',
-							
 							displayName : 'No:'
 						}, {
 							field : 'riceMillRegNum',
@@ -33,10 +32,10 @@ angular.module('myApp.view1', [])
 							field : 'ownerName',
 							displayName : 'Owner'
 						},{
-							field : 'primaryContact',
+							field : 'primaryContact.Contact',
 							displayName : 'Contact1'
 						},{
-							field : 'secondaryContact',
+							field : 'secondaryContact.Contact',
 							displayName : 'Contact2'
 						},{
 							field : 'activeFl',
@@ -52,7 +51,9 @@ angular.module('myApp.view1', [])
 	};
 
 		     $scope.getCompanies = function(){
-		 		$http.get("http://localhost:8080/KNR/getAllRiceMills/"+$window.sessionStorage.registrationId).success(function(response){
+		 		$http.get("http://localhost:8080/KNR/getAllRiceMills/3")
+		 				//+$window.sessionStorage.registrationId)
+		 		.success(function(response){
 		 			return $scope.myData = response;
 		 		}).error(function(error){
 		 			return error;

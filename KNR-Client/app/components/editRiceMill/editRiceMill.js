@@ -16,10 +16,11 @@ angular.module('myApp.eidtRiceMill', ['ngRoute'])
     		 that.newState = response.state;
     		 that.newZipcode = response.zipCode;
     		 that.newOwnerName = response.ownerName;
-    		 that.newPrimaryContact = response.primaryContact;
-    		 that.newSecondaryContact = response.secondaryContact;
+    		 that.newPrimaryContact = response.primaryContact.Contact;
+    		 that.newSecondaryContact = response.secondaryContact.Contact;
     		 that.newActiveFl = response.activeFl;
-    		
+    		 that.newFirstName = response.customerId.firstName;
+    		 that.newLastName = response.customerId.lastName;
 	 			return response;
 	 			
 	 		}).error(function(error){

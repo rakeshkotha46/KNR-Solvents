@@ -1,9 +1,10 @@
 'use strict';
-
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
   'ui.grid',
+  'ui.bootstrap',
+  'ui.bootstrap.tpls',
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
@@ -12,7 +13,8 @@ angular.module('myApp', [
   'myApp.deleteRiceMill',
   'myApp.addOilMill',
   'myApp.Registration',
-  'myApp.Login'
+  'myApp.Login',
+  'myApp.logoutPopup'
 ])
 
 .config(['$httpProvider', function($httpProvider) {
@@ -23,38 +25,38 @@ angular.module('myApp', [
   $locationProvider.hashPrefix('!');
   //$locationProvider.html5Mode(true);
   $routeProvider.when('/riceMillList', {
-	    templateUrl: 'RiceMillList/riceMillList.html',
+	    templateUrl: 'components/RiceMillList/riceMillList.html',
 	    controller: 'View1Ctrl'
 	  })
 	  .when('/addRiceMill', {
-	    templateUrl: 'AddRiceMill/addRiceMill.html',
+	    templateUrl: 'components/AddRiceMill/addRiceMill.html',
 	    controller: 'View2Ctrl'
 	  })
 	  .when('/home', {
-	    templateUrl: 'Home/Home.html',
+	    templateUrl: 'commons/Home/Home.html',
 	    controller: 'HomeCtrl'
 	  })
 	  .when('/editRiceMill', {
-	    templateUrl: 'editRiceMill/editRiceMill.html',
+	    templateUrl: 'components/editRiceMill/editRiceMill.html',
 	    controller: 'editRiceMillCtrl'
 	  })
 	  .when('/deleteRiceMill', {
-		  templateUrl: 'deleteRiceMill/deleteRiceMill.html',
+		  templateUrl: 'components/deleteRiceMill/deleteRiceMill.html',
 		    controller: 'deleteRiceMillCtrl'
 	  
 	  })
 	  .when('/addOilMill', {
-		  templateUrl: 'AddOilMill/addOilMill.html',
+		  templateUrl: 'components/AddOilMill/addOilMill.html',
 		    controller: 'AddOilMillCtrl'
 	  
 	  })
 	  .when('/registration', {
-		  templateUrl: 'Registration/Registration.html',
+		  templateUrl: 'commons/Registration/Registration.html',
 			  controller: 'RegistrationCtrl'
 	  
 	  })
 	  .when('/login', {
-		  templateUrl: 'Login/Login.html',
+		  templateUrl: 'commons/Login/Login.html',
 		  controller: 'LoginCtrl'
 	  
 	  })
