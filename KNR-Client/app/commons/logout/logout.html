@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>message</title>
+<style type="text/css">
+.modal-dialog {
+	position: absolute;
+	top: 50%;
+	margin-top: -10%;
+	left: 50%;
+	margin-left: -18%;
+}
+</style>
+</head>
+<body>
+	<div class="row">
+		<div style="text-align: center;">
+			<h2>
+				<b>Are You Sure Want To Logout?</b>
+			</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div style="margin: auto; width: 70%;">
+			<button type="submit" class="btn btn-primary" ng-click="logout()"
+				style="color: #ce9e1a;">
+				<b>YES</b>
+			</button>
+			<button class="btn btn-primary" style="color: #ce9e1a; float: right" ng-click="cancel()">
+				<b>NO</b>
+			</button>
+		</div>
+	</div>
+</body>
+
+</html>

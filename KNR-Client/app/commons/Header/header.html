@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.navbar.navbar-inverse {
+	margin-right: 8%;
+	margin-left: 8%;
+	border: 4px solid #ce9e1a;
+	border-radius: 8px;
+	background-color: #575a5e
+}
+
+.nav.nav-pills.nav-justified>li>a {
+	color: #ce9e1a;
+	background-color: #575a5e;
+	font-size: 1.3em;
+}
+
+.nav.nav-pills.nav-justified>li.active>a, 
+.nav.nav-pills.nav-justified>li>a:hover,
+.nav.nav-pills.nav-justified>li>a:focus {
+	color: #fff;
+	background-color: #575a5e;
+	font-size: 1.4em;
+}
+
+</style>
+</head>
+<body ng-app="myApp">
+	<!-- image and login -->
+	<br>
+	<div class="row">
+		<div class="col-md-2 col-md-offset-1">
+			<img src="commons/Images/knr-logo.png" width="130px" height="130px"
+				class="img-responsive">
+		</div>
+		<div class="col-md-3 col-md-offset-2"></div>
+
+		<div class="col-md-3">
+			<button ng-click="loginPopup();" ng-hide="authorizedUser"
+				type="submit" class="btn btn-primary">
+				<b>LOGIN</b>
+			</button>
+			<button ng-click="logoutPopup();" ng-show="authorizedUser"
+				type="submit" class="btn btn-primary"
+				style="color: #ce9e1a; float: right">
+				<b>LOGOUT</b>
+			</button>
+			<br> <br> <br>
+			<p style="font-size: 22px; color: #333333; float: right;">
+				<strong>Call Us Now: 9866230909</strong>
+		</div>
+	</div>
+	<!-- image and login End -->
+
+	<!--Menu Bar-->
+	<br>
+	<nav class="navbar navbar-inverse">
+		<ul class="nav nav-pills nav-justified">
+			<li><a href="#!/home"><b>Home</b></a></li>
+			<li><a href="#">Manage PaddyMills</a></li>
+			<li><a href="#">Manage Contacts</a></li>
+			<li><a href="#!/addRiceMill">Manage RiceMills</a></li>
+			<li><a href="#">Contact Us</a></li> 
+		</ul>
+	</nav>
+	<!-- Menu Bar End -->
+</body>
+</html>

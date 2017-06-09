@@ -1,20 +1,42 @@
 <html>
 <head>
-<style>
+ 
+ <style>
 .input-group-addon {
 	min-width: 180px;
 }
-</style>
+
+.panel
+{
+margin-left:8%;
+margin-right:8%;
+}
+#primaryContact
+{
+margin-left:13%;
+}
+#heading{
+background-color:#959aa0;
+}
+#primaryHeading{
+background-color:#959aa0;
+}
+
+#secondaryHeading{
+background-color:#959aa0;
+}
+
+</style> 
 </head>
 <body>
 
-	<div class="jumbotron text-center">
+	<!-- <div class="jumbotron text-center">
 		<h1>KNR Solvents <a class="navbar-brand" href="#" style="color: #fff; padding-left:50px">Home</a></h1>
-	</div>
+	</div> -->
 
-	<div class="col-md-10 col-md-offset-1">
-		<div class="panel panel-default">
-			<div class="panel-heading">Add Company Details</div>
+	 
+		<div class="panel panel-default ">
+			<div class="panel-heading col-md-12" id="heading">Add Company Details</div><br><br>
 			<div class="panel-body">
 				<div class="col-md-6">
 					<div class="input-group">
@@ -45,7 +67,7 @@
 							placeholder="Enter Address " ng-model="newAddress">
 					</div>
 				</div>
-				<!-- <div class="col-Xs-2"></div>	 -->
+					
 				<div class="col-md-6">
 
 					<div class="input-group">
@@ -74,11 +96,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="col-md-10 col-md-offset-1">
+
+	<div class="col-md-12">
 		<div class="col-md-6" >
-			<div class="panel panel-default">
-				<div class="panel-heading">Primary Contact</div>
+			<div class="panel panel-default" id="primaryContact">
+				<div class="panel-heading" id="primaryHeading">Primary Contact</div>
 				<div class="panel-body">
 					<div class="input-group">
 						<span class="input-group-addon">First Name</span> <input
@@ -102,10 +124,11 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
-		<div class="col-md-6">
-			<div class="panel panel-default">
-				<div class="panel-heading">Secondary Contact</div>
+		<div class="col-md-6" style="padding-right:50px">
+			<div class="panel panel-default" >
+				<div class="panel-heading" id="secondaryHeading">Secondary Contact</div>
 				<div class="panel-body">
 					<div class="input-group">
 						<span class="input-group-addon">First Name</span> <input
@@ -134,7 +157,7 @@
 	<div class="col-md-10 col-md-offset-1" align="right">
 		<button ng-click="addRiceMill();" class="btn btn-danger">Add Rice Mill</button>
 			<button ng-click="resetRiceMillDetails();" class="btn btn-danger" >Reset</button>
-	</div>
+	</div> 
 	<!-- <div  class="col-md-12 cf clearRow" style="padding-right: 200px; padding-top: 15px">
 			<button ng-click="addRiceMill();" class="btn btn-danger pull-right">Add Rice Mill</button>
 			<button ng-click="resetRiceMillDetails();" class="btn btn-danger" >Reset</button>

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,6 +46,7 @@ public class TestRestController {
 		return data;
 	}
 	
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@RequestMapping(method = RequestMethod.GET, value = "/getRiceMillDetails/{riceMillId}", produces= "application/json")
 	public RiceMill getRiceMillDetails(@PathVariable int riceMillId) {
 		RiceMill data = riceMillRepo.getRiceMill(riceMillId);

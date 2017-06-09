@@ -14,7 +14,7 @@ angular.module('myApp', [
   'myApp.addOilMill',
   'myApp.Registration',
   'myApp.Login',
-  'myApp.logoutPopup'
+  'myApp.logout'
 ])
 
 .config(['$httpProvider', function($httpProvider) {
@@ -62,7 +62,7 @@ angular.module('myApp', [
 	  })
 	  
 	  .otherwise({
-		  redirectTo : '/login'
+		  redirectTo : '/home'
   });
   
 }]);

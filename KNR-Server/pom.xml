@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.KNR</groupId>
-	<artifactId>SpringBoot</artifactId>
+	<artifactId>KNR-Server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBoot</name>
+	<name>KNR-Server</name>
 	<description>Application for KNR Corp</description>
 
 	<parent>
@@ -39,6 +39,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+	<!-- 	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency> -->
 		
 		<dependency>
 			<groupId>javax.ws.rs</groupId>

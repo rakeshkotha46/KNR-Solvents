@@ -1,43 +1,43 @@
-<body ng-app="myApp" id="mypage">
-	<div style="text-align:center; color:#FFFFFF; margin-top:5%;">
-		<h1>KNR Solvents</h1>
-		<p>Specialization</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+.modal-dialog {
+    position: absolute;
+    top: 50%;
+    margin-top: -10%;
+    left: 50%;
+    margin-left: -18%;
+}
+</style>
+</head>
+<body>
+	<div class="row">
+		<div style=" text-align: center;">
+			<h2><b>Login To Your Account</b></h2>
+		</div>
 	</div>
-	<div class="col-md-6 col-md-offset-3" style="width:30%; height:30%; margin-left:35%; margin-top:10%;">
-		<h2 style="color:#FFFFFF">Login</h2>
-
-		<form name="form" ng-submit="vm.login()" role="form">
-			<div class="form-group"
-				ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-				<label for="username" style="color:#FFFFFF">Username</label> <input type="text"
-					name="username" id="username" class="form-control"
-					ng-model="username" required /> <span
-					ng-show="form.username.$dirty && form.username.$error.required"
-					class="help-block">Username is required</span>
-			</div>
-			<div class="form-group"
-				ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-				<label for="password" style="color:#FFFFFF">Password</label> <input type="password"
-					name="password" id="password" class="form-control"
-					ng-model="password" required /> <span
-					ng-show="form.password.$dirty && form.password.$error.required"
-					class="help-block">Password is required</span>
-			</div>
-			<div class="form-actions">
-				<button type="submit" ng-click="login()"
-					ng-disabled="form.$invalid || vm.dataLoading"
-					class="btn btn-primary">Login</button>
-				<img ng-if="vm.dataLoading"
-					src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-				<a href="#!/registration" class="btn btn-link">Register</a>
-			</div>
-		</form>
+	<br>
+	<div class="row">
+		<div style="margin:auto; width:70%;">
+			<input name="username" id="username" ng-model="username" type="text" class="form-control" placeholder="UserName">
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div style="margin:auto; width:70%;">
+			<input name="password" id="password" ng-model="password" type="password" class="form-control" placeholder="password">
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div style="margin:auto; width:70%;">
+			<button type="submit" class="btn btn-primary" ng-click="login()"  style="color: #ce9e1a;" ><b>LOGIN</b></button>
+			<button class="btn btn-primary" ng-click="cancel()" style="color: #ce9e1a; float:right"><b>CANCEL</b></button>
+			
+		</div>
 	</div>
 </body>
-<style>
-body {
-        background-image: url("/commons/images/high-resolution-wallpapers-17.jpg");
-        background-repeat: no-repeat;
-} 
- 
-</style>
+</html>
